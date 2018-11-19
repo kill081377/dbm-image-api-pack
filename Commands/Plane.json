@@ -1,0 +1,58 @@
+{
+  "name": "Plane",
+  "permissions": "NONE",
+  "restriction": "1",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "user",
+      "name": "Store Member Info"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://api.chewey-bot.ga/plane?auth=1{YOUR_TOKEN_HERE}",
+      "path": "data",
+      "storage": "1",
+      "varName": "im",
+      "debugMode": "0",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "title": "Here is what i found for Plane",
+      "author": "",
+      "color": "#00ff00",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "${tempVars(\"im\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "emebed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "emebed",
+      "message": "Requested by ${tempVars(\"user\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "emebed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "_id": "Tcggj",
+  "comType": "0"
+}

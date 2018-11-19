@@ -1,0 +1,30 @@
+{
+  "name": "Random",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "sgFHd",
+  "actions": [
+    {
+      "title": "❓ Random ❓",
+      "author": "",
+      "color": "",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "https://source.unsplash.com/random",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "msg",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

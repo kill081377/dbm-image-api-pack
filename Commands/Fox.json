@@ -1,0 +1,42 @@
+{
+  "name": "Fox",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "eiWWr",
+  "actions": [
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://randomfox.ca/floof",
+      "path": "image",
+      "storage": "1",
+      "varName": "image",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "title": "Fox ",
+      "author": "",
+      "color": "",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "${tempVars(\"image\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "emebed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "emebed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

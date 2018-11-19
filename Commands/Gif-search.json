@@ -1,0 +1,69 @@
+{
+  "name": "gif-search",
+  "permissions": "NONE",
+  "restriction": "1",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "2",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Hey that command hasn't been made correctly. It should be:\n`[p]gif-search {what_you_want_to_search}`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "search",
+      "name": "Store Command Params"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.giphy.com/v1/gifs/search?api_key={token_goes_here}&q=${tempVars(\"search\")}&limit=1",
+      "path": "data.0.images.original.url",
+      "storage": "1",
+      "varName": "image",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "title": "Here is what i found for `${tempVars(\"search\")}`",
+      "author": "",
+      "color": "#00ff00",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "${tempVars(\"image\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

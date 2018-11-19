@@ -1,0 +1,74 @@
+{
+  "name": "gif-animal",
+  "permissions": "NONE",
+  "restriction": "1",
+  "actions": [
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.giphy.com/v1/gifs/random?api_key={token_goes_here}&tag=smile",
+      "path": "data.image_url",
+      "storage": "1",
+      "varName": "image",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.giphy.com/v1/gifs/random?api_key={token_goes_here}&tag=smile",
+      "path": "data.title",
+      "storage": "1",
+      "varName": "title",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "user",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "Your smiley Gif ${tempVars(\"user\")}",
+      "author": "",
+      "color": "#00ff00",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "${tempVars(\"image\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "${tempVars(\"title\")}\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Note that the gifs won't always be about animals!",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

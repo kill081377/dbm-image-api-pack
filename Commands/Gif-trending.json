@@ -1,0 +1,156 @@
+{
+  "name": "gif-trending",
+  "permissions": "NONE",
+  "restriction": "1",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "5",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "number",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "number",
+      "comparison": "3",
+      "value": "26",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "number",
+      "comparison": "4",
+      "value": "0",
+      "iftrue": "2",
+      "iftrueVal": "7",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Command error the command should be structured like:\n`[p]trending-gif [number between 1-24]`\ne.g.`!trending-gif 1`",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "FirstNumber": "${tempVars(\"number\")}",
+      "info": "1",
+      "SecondNumber": "1",
+      "storage": "1",
+      "varName": "number",
+      "name": "Basic Math Operation"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.giphy.com/v1/gifs/trending?api_key={token_goes_here}",
+      "path": "data.${tempVars(\"number\")}.images.original.url",
+      "storage": "1",
+      "varName": "image",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.giphy.com/v1/gifs/trending?api_key={token_goes_here}",
+      "path": "data.${tempVars(\"number\")}.user.avatar_url",
+      "storage": "1",
+      "varName": "avatar_url",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.giphy.com/v1/gifs/trending?api_key={token_goes_here}",
+      "path": "data.${tempVars(\"number\")}.title",
+      "storage": "1",
+      "varName": "title",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "http://api.giphy.com/v1/gifs/trending?api_key={token_goes_here}",
+      "path": "data.${tempVars(\"number\")}.username",
+      "storage": "1",
+      "varName": "username",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "FirstNumber": "${tempVars(\"number\")}",
+      "info": "0",
+      "SecondNumber": "1",
+      "storage": "1",
+      "varName": "number",
+      "name": "Basic Math Operation"
+    },
+    {
+      "title": "Gif from Trending number ${tempVars(\"number\")}",
+      "author": "",
+      "color": "#00ff00",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "${tempVars(\"image\")}",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "emebed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "emebed",
+      "message": "${tempVars(\"title\")}\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "emebed",
+      "message": "made by ${tempVars(\"username\")}",
+      "footerIcon": "${tempVars(\"avatar_url\")}",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "emebed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
