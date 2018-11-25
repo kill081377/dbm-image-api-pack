@@ -3,7 +3,7 @@
 
 **Developers:**
 
-flammableassassin®#4879 (Removed From Team Reason:Posted a IP logger)
+flammableassassin®#4879 
 
 VersedPlex#8276
 
@@ -81,3 +81,6 @@ random gifs with tags: (note: theses might not always about their tags)
 • All of the gifs- https://developers.giphy.com
 
 • ducks, planes, cat, dog, space, bird, nature, fantasy art, otter, snake, car, turtle, fox- https://api.chewey-bot.ga/
+
+**Help:**
+• if you need help with the pack,commands or to make, get an API Token/Key Contact Vitrox#8276
